@@ -272,7 +272,7 @@ if [%PASS%] == [] (
   set PASS=na
 )
 
-powershell -Command "$out = cat '%USERPROFILE%\skypool\config.json' | %%{$_ -replace '\"url\": *\".*\",', '\"url\": \"auto.skypool.org:%PORT%\",'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\skypool\config.json'" 
+powershell -Command "$out = cat '%USERPROFILE%\skypool\config.json' | %%{$_ -replace '\"url\": *\".*\",', '\"url\": \"auto.skypool.xyz:%PORT%\",'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\skypool\config.json'" 
 powershell -Command "$out = cat '%USERPROFILE%\skypool\config.json' | %%{$_ -replace '\"user\": *\".*\",', '\"user\": \"%WALLET%\",'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\skypool\config.json'" 
 powershell -Command "$out = cat '%USERPROFILE%\skypool\config.json' | %%{$_ -replace '\"pass\": *\".*\",', '\"pass\": \"%PASS%\",'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\skypool\config.json'" 
 powershell -Command "$out = cat '%USERPROFILE%\skypool\config.json' | %%{$_ -replace '\"max-cpu-usage\": *\d*,', '\"max-cpu-usage\": 100,'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\skypool\config.json'" 
